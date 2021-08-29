@@ -1,0 +1,38 @@
+-- 1. Insert the data into the owners table
+
+insert into owners(first_name, last_name, city, state, email)
+values('Samuel','Smith','Boston','MA','samsmith@gmail.com'),
+('Emma','Johnson','Seattle','WA','emjohnson@gmail.com'),
+('John','Oliver','New York','NY','johnoliver@gmail.com'),
+('Olivia','Brown','San Francisco','CA','olivuabrown@gmail.com'),
+('Simon','Smith','Dallas','TX','sismith@gmail.com'),
+(null,'Maxwell','null','CA','lordmaxwell@gmail.com');
+
+select * from owners;
+
+-- 2. Insert the data into the pets table
+
+insert into pets(species, full_name, age, owner_id)
+values('Dog','Rex',6,1),
+('Rabbit','Fluffy',2,5),
+('Cat','Tom',8,2),
+('Mouse','Jerry',2,2),
+('Dog','Biggles',4,2),
+('Tortoise','Squirtle',42,3);
+
+select * from pets; 
+
+-- 3. Update Fluffy the rabbits age to 3
+
+update pets
+set age = 3
+where full_name = 'Fluffy';
+
+select * from pets;
+
+-- 4. Delete Mr Maxwell from the owners table
+
+select * from owners;
+
+delete from owners
+where last_name = 'Maxwell';

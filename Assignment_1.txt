@@ -1,0 +1,37 @@
+-- 1. Create a new database called owner_pets
+
+-- 2. Create the owners table
+
+CREATE TABLE owners(
+	id SERIAL PRIMARY KEY,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	city VARCHAR(30),
+	state CHAR(2)
+);
+
+select * from owners;
+
+-- 3. Create the pets table (with foreign key)
+create table pets(
+	id serial primary key,
+	species varchar(30),
+	full_name varchar(30),
+	age int,
+	owner_id int references owners(id)
+);
+select * from pets;
+
+-- 4. Add an email column to the owner table
+
+alter table owners
+add column email varchar(50) unique;
+
+select * from owners;
+
+-- 5. Change the data type of the last_name column in the owners table to VARCHAR(50).
+
+alter table owners 
+alter column last_name type varchar(50);
+
+select * from owners;
